@@ -21,9 +21,9 @@ public class ProductSearchByName extends HttpServlet {
 	ProductService productService = new ProductServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name=req.getParameter("name");
-		List<Product> productSeachByName =productService.seachByName(name);
-		req.setAttribute("productSeachByName", productSeachByName);
+		String name = req.getParameter("name");
+		List<Product> productSearchByName = productService.seachByName(name);
+		req.setAttribute("productSearchByName", productSearchByName);
 		req.getRequestDispatcher("/view/client/view/product-search-by-name.jsp").forward(req, resp);
 		
 		

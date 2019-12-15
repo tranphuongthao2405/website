@@ -22,10 +22,11 @@ public class ProductSearchByCategory extends HttpServlet {
 	@Override
 		protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 			String cate_id = req.getParameter("cate_id");
-			List<Product> productSeachByCategory = productService.seachByCategory(Integer.parseInt(cate_id));
-			req.setAttribute("productSearchByCategory", productSeachByCategory);
+			List<Product> productSearchByCategory = productService.seachByCategory(Integer.parseInt(cate_id));
+			req.setAttribute("productSearchByCategory", productSearchByCategory);
 			req.getRequestDispatcher("/view/client/view/product-search-by-category.jsp").forward(req, resp);
 
 
 	}
 }
+
